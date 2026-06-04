@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import projet1 from '../assets/images/project-1.webp';
+import projet2 from '../assets/images/project-2.webp';
+import projet3 from '../assets/images/project-3.webp';
+
+const projects = [
+  {
+    title: "Rénovation complète – Évry",
+    description: "Rénovation d'un appartement de 75m² : plâtrerie, carrelage, peinture.",
+    image: projet1,
+    category: "Rénovation",
+  },
+  {
+    title: "Extension de maison – Corbeil",
+    description: "Construction d'une extension de 30m² avec dalle béton et toiture.",
+    image: projet2,
+    category: "Construction",
+  },
+  {
+    title: "Salle de bain – Massy",
+    description: "Création d'une salle de bain complète avec faïence et sanitaires.",
+    image: projet3,
+    category: "Aménagement",
+  },
+];
+---
+
+<Layout title="Réalisations – VP Bâtiment">
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-bold mb-4">Nos réalisations</h1>
+    <p class="text-gray-500 max-w-xl mb-12">
+      Découvrez quelques-uns de nos chantiers récents en Essonne et région parisienne.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <div class="rounded-lg overflow-hidden shadow-sm border border-gray-100">
+          <Image
+            src={project.image}
+            alt={project.title}
+            class="w-full h-56 object-cover"
+            width={600}
+            height={224}
+          />
+          <div class="p-5">
+            <span class="text-xs font-semibold uppercase tracking-wider text-orange-500">
+              {project.category}
+            </span>
+            <h2 class="text-lg font-semibold mt-1 mb-2">{project.title}</h2>
+            <p class="text-gray-500 text-sm">{project.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>

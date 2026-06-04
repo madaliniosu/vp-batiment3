@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const WHATSAPP_NUMBER = "33600000000"; // replace with real number
+const WHATSAPP_MESSAGE = "Bonjour, je souhaite obtenir un devis.";
+const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+---
+
+<Layout title="Contact – VP Bâtiment">
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-bold mb-4">Contactez-nous</h1>
+    <p class="text-gray-500 max-w-xl mb-12">
+      Décrivez votre projet et nous vous répondrons dans les plus brefs délais.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- Form -->
+      <form
+        action="https://formspree.io/f/xxxxxxxx"
+        method="POST"
+        class="flex flex-col gap-5"
+      >
+        <div>
+          <label class="block text-sm font-medium mb-1" for="name">Nom</label>
+          <input
+            type="text" id="name" name="name" required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="email">Email</label>
+          <input
+            type="email" id="email" name="email" required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="phone">Téléphone</label>
+          <input
+            type="tel" id="phone" name="phone"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="message">Message</label>
+          <textarea
+            id="message" name="message" rows="5" required
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded transition-colors"
+        >
+          Envoyer le message
+        </button>
+      </form>
+
+      <!-- Contact info + WhatsApp -->
+      <div class="flex flex-col gap-6">
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Préférez WhatsApp ?</h2>
+          <p class="text-gray-500 mb-4">
+            Envoyez-nous un message directement et nous vous répondrons rapidement.
+          </p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded transition-colors"
+          >
+            Nous contacter sur WhatsApp
+          </a>
+        </div>
+        <div class="text-gray-500 text-sm mt-4 flex flex-col gap-1">
+          <p><span class="font-medium text-gray-900">Zone d'intervention :</span> Essonne, Région parisienne</p>
+          <p><span class="font-medium text-gray-900">Téléphone :</span> 06 00 00 00 00</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>

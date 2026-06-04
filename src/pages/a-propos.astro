@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { value: "10+", label: "Ans d'expérience" },
+  { value: "200+", label: "Chantiers réalisés" },
+  { value: "100%", label: "Clients satisfaits" },
+];
+---
+
+<Layout title="À propos – VP Bâtiment">
+  <main>
+
+    <!-- Header -->
+    <section class="bg-gray-900 text-white py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">À propos de nous</h1>
+        <p class="text-gray-300 text-lg max-w-xl">
+          Une entreprise familiale au service de vos projets depuis plus de 10 ans.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Notre histoire</h2>
+          <p class="text-gray-600 mb-4">
+            VP Bâtiment a été fondée avec une conviction simple : chaque client mérite un travail soigné,
+            livré dans les délais et au prix convenu.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Basés en Essonne, nous intervenons sur tous types de chantiers — de la petite rénovation
+            de salle de bain à la construction d'une extension complète.
+          </p>
+          <p class="text-gray-600">
+            Notre équipe est composée d'artisans qualifiés, passionnés par leur métier et attentifs
+            aux détails qui font la différence.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 text-center">
+          {stats.map(stat => (
+            <div class="bg-gray-50 rounded-lg p-6">
+              <p class="text-4xl font-bold text-orange-500 mb-1">{stat.value}</p>
+              <p class="text-sm text-gray-500">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Nos engagements</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🤝</div>
+            <h3 class="text-lg font-semibold mb-2">Transparence</h3>
+            <p class="text-gray-500 text-sm">Devis détaillés, sans surprises. Vous savez exactement ce que vous payez avant le début des travaux.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">⏱️</div>
+            <h3 class="text-lg font-semibold mb-2">Respect des délais</h3>
+            <p class="text-gray-500 text-sm">Nous planifions chaque chantier avec soin pour tenir les délais annoncés.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">✅</div>
+            <h3 class="text-lg font-semibold mb-2">Qualité garantie</h3>
+            <p class="text-gray-500 text-sm">Matériaux sélectionnés, finitions soignées. Notre réputation repose sur la qualité de notre travail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-orange-500 text-white text-center">
+      <div class="max-w-xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">Parlons de votre projet</h2>
+        <p class="mb-8 text-orange-100">Contactez-nous pour un devis gratuit et sans engagement.</p>
+        <a href="/contact"
+          class="bg-white text-orange-500 font-semibold px-8 py-3 rounded hover:bg-orange-50 transition-colors">
+          Demander un devis
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>

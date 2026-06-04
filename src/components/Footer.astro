@@ -1,0 +1,49 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Réalisations", href: "/realisations" },
+  { label: "À propos", href: "/a-propos" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Brand -->
+    <div>
+      <p class="text-white font-bold text-lg mb-2">VP Bâtiment</p>
+      <p class="text-sm">Construction & Rénovation<br />Essonne – Région parisienne</p>
+    </div>
+
+    <!-- Nav links -->
+    <div>
+      <p class="text-white font-semibold mb-3">Navigation</p>
+      <ul class="flex flex-col gap-2 text-sm">
+        {links.map(link => (
+          <li>
+            <a href={link.href} class="hover:text-white transition-colors">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <p class="text-white font-semibold mb-3">Contact</p>
+      <ul class="flex flex-col gap-2 text-sm">
+        <li>📞 06 00 00 00 00</li>
+        <li>📧 contact@vpbatiment.fr</li>
+        <li>📍 Essonne (91), Île-de-France</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 mt-10 pt-6 border-t border-gray-800 text-xs text-center">
+    © {currentYear} VP Bâtiment – Tous droits réservés
+  </div>
+</footer>
